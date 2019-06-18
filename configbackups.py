@@ -26,7 +26,7 @@ def grab_config(each_router):
                 textconfig = etree.tostring(bytesconfig).decode()
                 try:
                     textconfig = textconfig.replace('<configuration-text>\n', '')
-                    textconfig = textconfig.replace('</configuration-text>\n', '')
+                    textconfig = textconfig.replace('</configuration-text>', '')
                 except Exception as err:
                     print(f"Did not find configuration text header or footer. Verify backup successful.\n  Error:{err}")
                 outputfile.write(f"{textconfig}\n")
